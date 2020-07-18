@@ -8,6 +8,7 @@
 #include "Button.h"
 #include "Obstacle.h"
 #include "DebugKeys.h"
+#include "PathNode.h"
 
 class PlayScene : public Scene
 {
@@ -22,6 +23,16 @@ public:
 	virtual void handleEvents() override;
 	virtual void start() override;
 private:
+	//PRIVATE FUNCTIONS
+	void m_buildGrid();
+
+	void m_displaygrid();
+
+	void m_displayGridLOS();
+
+	void m_setGridLOS();
+
+	//MEMEBER VARIABLES
 	glm::vec2 m_mousePosition;
 
 	Plane* m_pPlaneSprite;
@@ -34,6 +45,8 @@ private:
 	bool m_bPatrolMode;
 
 	bool m_bDebugKeys[NUM_OF_DEBUG_KEYS];
+
+	std::vector<PathNode*> m_pGrid;
 };
 
 #endif /* defined (__PLAY_SCENE__) */

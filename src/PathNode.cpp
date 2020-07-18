@@ -1,12 +1,13 @@
 #include "PathNode.h"
 #include "CollisionManager.h"
 
+
 PathNode::PathNode()
 	:m_bLOS(false)
 {
-	setWidth(40);
-	setHeight(40);
-	setType(PATH_NODE);
+	GameObject::setWidth(Config::TILE_SIZE);
+	GameObject::setHeight(Config::TILE_SIZE);
+	GameObject::setType(PATH_NODE);
 	
 }
 
